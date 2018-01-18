@@ -1,6 +1,6 @@
 {
   "name": "vega-nocanvas",
-  "version": "3.0.9-alpha",
+  "version": "3.0.9-beta",
   "description": "The Vega visualization grammar - no canvas clone.",
   "license": "BSD-3-Clause",
   "author": {

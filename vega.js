@@ -8602,11 +8602,11 @@ var Canvas;
 
 try {
   // try to load canvas module
-  Canvas = require('canvas');
+  Canvas = ((()=>{throw new Error("Canvas is disabled")})());
 } catch (e) {
   try {
     // if canvas fails, try to load canvas-prebuilt
-    Canvas = require('canvas-prebuilt');
+    Canvas = ((()=>{throw new Error("Canvas is disabled")})());
   } catch (e2) {
     // if all options fail, set to null
     Canvas = null;
@@ -27117,9 +27117,9 @@ function cloudCanvas() {
       return canvas;
     }
     try {
-      return new (require('canvas'))();
+      return new (((()=>{throw new Error("Canvas is disabled")})()))();
     } catch (e) {
-      return new (require('canvas-prebuilt'))()
+      return new (((()=>{throw new Error("Canvas is disabled")})()))()
     }
   } catch (e) {
     error$1('Canvas unavailable. Run in browser or install node-canvas.');
