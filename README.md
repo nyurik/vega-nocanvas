@@ -1,6 +1,9 @@
 # Vega Library Clone
 
-This repository holds an unmodified compiled copy of the [Vega library browser code](https://github.com/vega/vega) (without the Canvas dependencies).
+This library is a drop-in replacement for the [Vega library browser code](https://github.com/vega/vega), but without any external dependencies, and without the `require('canvas')` and `require('canvas-prebuilt')`.
+
+## Usage
+* in `package.json`, use `"vega-nocanvas"` instead of `"vega"`.
 
 ## Updating
 * Download the latest `vega.zip` file from [Vega releases page](https://github.com/vega/vega/releases)
