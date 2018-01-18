@@ -1,0 +1,42 @@
+{
+  "name": "vega-nocanvas",
+  "version": "3.0.9-alpha",
+  "description": "The Vega visualization grammar - no canvas clone.",
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "UW Interactive Data Lab",
+    "url": "http://idl.cs.washington.edu"
+  },
+  "contributors": [
+    {
+      "name": "Jeffrey Heer",
+      "url": "http://idl.cs.washington.edu"
+    },
+    {
+      "name": "Arvind Satyanarayan",
+      "url": "http://arvindsatya.com"
+    },
+    {
+      "name": "Ryan Russell",
+      "url": "https://github.com/RussellSprouts"
+    },
+    {
+      "name": "Emily Gu",
+      "url": "https://github.com/emilygu"
+    },
+    {
+      "name": "Dominik Moritz",
+      "url": "https://www.domoritz.de"
+    }
+  ],
+  "main": "vega.js",
+  "scripts": {
+    "set_version": "npm version --no-git-tag-version `grep -oP '(?<=var version = \")[^\"]*' vega.js`",
+    "rm_require_canvas": "sed -E -i 's/require\\('\\''canvas(-prebuilt)?'\\''\\)/\\(\\(\\(\\)=>{throw new Error\\(\"Canvas is disabled\"\\)}\\)\\(\\)\\)/g' vega.js",
+    "build": "npm run set_version && npm run rm_require_canvas"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nyurik/vega-nocanvas.git"
+  }
+}
